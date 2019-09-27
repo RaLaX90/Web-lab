@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 2</title>
+</head>
+<body>
+	<script type="text/javascript">
+		function A() {
+			var z = t2.value;
+			t2.value = t1.value;
+			t1.value = z;
+		}
+
+		function B() {
+			var x = t1.value;
+			t1.value = t2.value;
+			t2.value = x;
+		}
+	</script>
+<input type="text" id="t1" onblur="A()">
+<input type="text" id="t2" onblur="A()">
+</body>
+</html>

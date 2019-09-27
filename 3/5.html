@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 3</title>
+</head>
+<body>
+<script type="text/javascript">
+	var chislo = prompt("Введіть число, факторіал якого хочете знайти","");
+	var fact = 1;
+	for(var i = 1; i <= chislo; i++){
+		fact *= i;
+	}
+	alert("Факторіал через \"for\" = "+fact);
+
+	fact = 1,i = 1;
+	while(i <= chislo){
+		fact *= i;
+		i++;	
+	}
+	alert("Факторіал через \"while\" = "+fact);
+
+</script>
+</body>
+</html>

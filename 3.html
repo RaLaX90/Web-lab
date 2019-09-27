@@ -1,0 +1,37 @@
+<HTML>
+
+<HEAD>
+ 
+<title> Лаба №1 </title>
+ 
+</HEAD>
+  
+<BODY>
+
+<div>
+
+<script>
+
+
+var R=prompt("Зовнішній радіус R(число) ",'');
+
+var r=prompt("Внутрішній радіус r(число) ",'');
+
+if(R > 0 && R > r && r > 0) {
+
+document.write("Площа кільця ", Math.PI*(Math.pow(R,2)-Math.pow(r,2)),".");
+
+alert('Площа кільця:' + Math.PI*(Math.pow(R,2)-Math.pow(r,2)));
+}
+ else{ document.write("Площа кільця не була знайдена.");
+  alert("Введено хибне значення"); }
+
+
+</script>
+
+</div>
+</BODY>
+
+ 
+
+</HTML>

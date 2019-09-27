@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 2</title>
+</head>
+<body>
+
+	<style type="text/css">
+		.di {
+			margin-left: -4px;
+			margin-top: 300px;
+			width: 200px;
+			height: 100px;
+			border: 1px solid black;
+			display:inline-block;
+		}
+		#d {
+			margin-left:30%;
+		}
+		#i {
+			position:absolute;
+			display:none;
+			margin-top:-230px;
+		}
+		#i::before {
+			display: flex;
+			justify-content: center;
+			content:"\2192";
+			font-size:100px;
+		}											/*onmousemove="alert(window.event.clientX)"*/
+	</style>
+
+
+<div id="d" class="di"></div>
+<div id="f"  class="di"></div>
+<div id="g" class="di"></div>
+<div id="i"></div>
+
+<script type="text/javascript">
+	// var elements = document.querySelectorAll(".di");
+	// for(var q =0;q<elements.length;q++){
+	// 	elements[i].onmouseenter = function vis(){
+	// 			// i.style.display = "block";
+	// 			alert("dorou");
+	// }
+	// }
+
+	d.onmouseenter = function vis(){
+		i.style.display = "block";
+	}
+	f.onmouseenter = function vis(){
+		i.style.display = "block";
+	}
+	g.onmouseenter = function vis(){
+		i.style.display = "block";
+	}
+	d.onmousemove = function mov(){
+		i.style.marginLeft = (window.event.clientX - 65)  +"px";
+	}
+	f.onmousemove = function mov(){
+		i.style.marginLeft = (window.event.clientX - 65) + "px";
+	}
+	g.onmousemove = function mov(){
+		i.style.marginLeft = (window.event.clientX - 65) + "px";
+	}
+	d.onmouseleave = function mov(){
+		i.style.display = "none";
+	}
+	f.onmouseleave = function mov(){
+		i.style.display = "none";
+	}
+	g.onmouseleave = function mov(){
+		i.style.display = "none";
+	}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 3</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+// 		function func(){
+// 			// var luck = 0, q;
+// 			// for(var i = 000000; i <= 999999; i++){
+// 			// 	q = i.toString();
+// 			// 	alert(q);
+// 			// 	if( (q[0] + q[1] + q[2]) == (q[3] + q[4] + q[5]) ){
+// 			// 		alert(q);
+// 			// 		luck++;
+// 			// 	}
+// 			// }
+// 			// alert("Кількість щасливих білетів = " + luck);
+// 			for (var n = prompt ('введите шестизначный номер билета', ''),
+// w = n.split (''), s = j = 0; j < 3; j++)
+// s += parseInt (w [j]) - w [j + 3];
+// alert ((!s ? '' : 'не') + 'счастливый');
+// 		}
+function func(){
+			   var digits = {}, tmp;
+			   for (var i = 0; i <= 999; i++) {
+			        tmp = i % 10 + ((i % 100) - (i % 10)) / 10 + (i / 100) ^ 0; 
+			        if (digits[tmp] === undefined) {
+			            digits[tmp] = 1;
+			        } else {
+			            digits[tmp] += 1;
+			        }
+			   }
+			   tmp = 0;
+			   for (i in digits) {
+			       tmp += digits[i] * digits[i];
+			   }
+			   document.writeln( tmp );
+			  };
+	</script>
+
+<input type="button" onclick="func()" value="Порахувати">
+</body>
+</html>

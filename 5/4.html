@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Лаба 5 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script src="jq.js"></script>
+    <script>
+    function checkday(l) {
+        var e = l.value,
+            u = e.substring(0, 1);
+        if (e.length > 0 && e.length < 3) {
+            if (!isNum(e) || e == 0) { l.value = '' } else if (e < 1 || e > 31) { l.value = u }
+        } else if (e.length > 2) {
+            e = e.substring(0, 2);
+            l.value = e
+        }
+    };
+
+    function checkmon(l) {
+        var e = l.value,
+            u = e.substring(0, 1);
+        if (e.length > 0 && e.length < 3) {
+            if (!isNum(e) || e == 0) { l.value = '' } else if (e < 1 || e > 12) { l.value = u }
+        } else if (e.length > 2) {
+            e = e.substring(0, 2);
+            l.value = e
+        }
+    };
+
+    function checkyear(l) {
+        var e = l.value,
+            u = e.substring(0, (e.length - 1));
+        if (e.length > 0 && e.length < 7) {
+            if (!isNum(e) || e == 0) { l.value = u } else if (e < 1 || e > 275759) { l.value = '' }
+        } else if (e.length > 4) { l.value = u }
+    };
+
+    function isNum(u) {
+        var e = u;
+        if (e == '' || e == null || e.length == 0) { return !1 };
+        e = e.toString();
+        for (var l = 0; l < e.length; l++) { if ((e.substring(l, l + 1) < '0' || e.substring(l, l + 1) > '9') && e.substring(l, l + 1) != '.') { return !1 } };
+        return !0
+    };
+
+    function DaysInMonth(e, l) { with(new Date(e, l, 1, 12)) { setDate(0); return getDate() } };
+
+    function calage() {
+        var l = jQuery('#len11').val(),
+            e = jQuery('#len12').val(),
+            u = jQuery('#len13').val(),
+            a = new Date(u, e - 1, l),
+            t = a.getMonth(),
+            n = 0;
+        if (l == '' || e == '' || u == '') { alert('Заповніть всі поля') } else {
+            if (t == (e - 1) && u != '') {
+                if (e == 1 && l >= 20 || e == 2 && l <= 18) {
+                    value = 'Водолій'
+                } else if (e == 2 && l >= 19 || e == 3 && l <= 20) {
+                    value = 'Рыбы'
+                } else if (e == 3 && l >= 21 || e == 4 && l <= 19) {
+                    value = 'Овен'
+                } else if (e == 4 && l >= 20 || e == 5 && l <= 20) {
+                    value = 'Телец'
+                } else if (e == 5 && l >= 21 || e == 6 && l <= 21) {
+                    value = 'Близнецы'
+                } else if (e == 6 && l >= 22 || e == 7 && l <= 22) {
+                    value = 'Рак'
+                } else if (e == 7 && l >= 23 || e == 8 && l <= 22) {
+                    value = 'Лев'
+                } else if (e == 8 && l >= 23 || e == 9 && l <= 22) {
+                    value = 'Дева'
+                } else if (e == 9 && l >= 23 || e == 10 && l <= 22) {
+                    value = 'Весы'
+                } else if (e == 10 && l >= 23 || e == 11 && l <= 21) {
+                    value = 'Скорпион'
+                } else if (e == 11 && l >= 22 || e == 12 && l <= 21) {
+                    value = 'Стрелец'
+                } else if (e == 12 && l >= 22 || e == 1 && l <= 19) {
+                    value = 'Козерог'
+                };
+                jQuery('#val').val(value);
+                jQuery('#n1').html(value);
+                x = (1901 - u) % 12;
+                if (x == 1 || x == -11) { value1 = 'Крыса' };
+                if (x == 0) { value1 = 'Бык' };
+                if (x == 11 || x == -1) { value1 = 'Тигр' };
+                if (x == 10 || x == -2) { value1 = 'Кролик' };
+                if (x == 9 || x == -3) { value1 = 'Дракон' };
+                if (x == 8 || x == -4) { value1 = 'Змея' };
+                if (x == 7 || x == -5) { value1 = 'Лошадь' };
+                if (x == 6 || x == -6) { value1 = 'Овца' };
+                if (x == 5 || x == -7) { value1 = 'Обезьяна' };
+                if (x == 4 || x == -8) { value1 = 'Петух' };
+                if (x == 3 || x == -9) { value1 = 'Собака' };
+                if (x == 2 || x == -10) { value1 = 'Кабан' };
+                jQuery('#val1').val(value1)
+            } else { alert('Неправильная дата') }
+        }
+    };
+
+    function clearAlls() {
+        var e = new Date(),
+            l = e.getDate(),
+            u = e.getMonth() + 1,
+            a = e.getFullYear();
+        document.getElementById('len11').value = l;
+        document.getElementById('len12').value = u;
+        document.getElementById('len13').value = a;
+        document.getElementById('val').value = '';
+        document.getElementById('val1').value = '';
+        document.getElementById('calcsboxerror').innerHTML = ''
+    };
+    clearAlls();
+    </script>
+		<h1>Початкові дані</h1>
+		<label for="len11">Введіть день</label>
+		<input id="len11" name="len11" type="text" onkeyup='checkday(this)'></div>
+		<br><br>
+		<label for="len12">Введіть місяць</label>
+		<input id="len12" name="len12" type="text" onkeyup='checkmon(this)'></div>
+		<br><br>
+		<label for="len13">Введіть рік</label>
+		<input id="len13" name="len13" type="text" onkeyup='checkyear(this)'></div>
+		<h1>Результат:</h1>
+		<div>Знак Зодіака:</div>
+		<div><input id="val" type="text" readonly></div>
+		<br>
+		<div>Рік по Китайському календарю:</div>
+		<div><input id="val1" type="text" readonly></div>
+		<br>
+		<input type="button" value="Розрахувати" onclick="calage();  return false;">
+		<input type="reset" value="Очистити" onclick="clearAlls();  return false;">
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 4</title>
+</head>
+<body>
+<script type="text/javascript">
+	function func(){
+	var a = s.value;
+	var slovo = prompt("Введіть слово, яке треба замінити","");
+	var zamena = prompt("Введіть слово, на яке треба замінити","");
+	var arr = a.split(" ");
+	var b = 0 ;
+	for(var i = 0;i <= a.length;i++){
+		if(a[i] == " "){
+			b++;
+		}
+	}
+	for(var i = 0; i <= b; i++){
+	alert(arr[i]);
+		if(arr[i] == slovo){
+	arr[i] = zamena;
+	d.value += arr[i];} else {d.value += arr[i];}  
+	}
+}
+</script>
+<input type="text" id="s">
+<button onclick="func()">Змінити</button>
+<input type="text" id="d">
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 2</title>
+</head>
+<body>
+
+<style type="text/css">
+	#a {
+		height:300px;
+		width:300px;
+	}
+</style>
+
+<img src="1.jpg" id="a" onmouseenter="changes()" oncontextmenu="start()" onclick="stop()">
+
+<script type="text/javascript">
+	var names = ['1.jpg', '2.jpg', '3.jpg', '4.gif', '5.png']; // массив адресов/имён файлов изображений
+ 
+var arrayImage = []; // определяете искомый массив объектов изображений
+for (var i = 0; i <= names.length; i++){
+   arrayImage [i] = new Image ();
+   arrayImage [i].src = names [i];
+   }
+   
+   function changes(){
+   	var z = Math.floor(Math.random() * (5 - 1)) + 1;
+   	var x = Math.floor(Math.random() * (500 - 100)) + 100;
+   	var y = Math.floor(Math.random() * (500 - 100)) + 100;
+   	var marto = Math.floor(Math.random() * (400 - 100)) + 100;
+   	var marle = Math.floor(Math.random() * (500 - 100)) + 100;
+   	a.src =  z+".jpg";
+   	a.style.height = x+"px";
+   	a.style.width = y+"px";
+   	a.style.marginTop = marto+"px";
+   	a.style.marginLeft = marle+"px";
+
+   }
+   function start(){
+   	var timerId = window.setInterval(changes, 500);
+   }
+
+   function stop(){
+   	clearInterval(timerId);
+   }
+   var timerId = window.setInterval(changes, 500);
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Лаба 5 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <script>
+
+    function fn(a, b, c) {
+        c = new Date(a, b - 1, c);
+        b = (new Date(a, 0, 1)).getTime();
+        a = [7, 1, 2, 3, 4, 5, 6][c.getDay()];
+        c = c.getTime();
+        return 1 + Math.ceil(((c - b) / 36E5 / 24 - a) / 7);
+    }
+
+    function getData() {
+    	var year, month, day;
+    	year = document.getElementById('year').value;
+    	month = document.getElementById('month').value;
+    	day = document.getElementById('day').value;
+    	alert(fn(year, month, day));
+    }		
+    </script>	
+    <input type="text" placeholder="рік" id="year">
+    <input type="text" placeholder="місяць" id="month">
+    <input type="text" placeholder="день" id="day">
+    <input type="submit" value="Відправити" onclick="getData()">
+    
+</body>
+
+</html>

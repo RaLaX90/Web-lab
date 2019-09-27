@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 3</title>
+</head>
+<body>
+	<script type="text/javascript">
+	
+		function func(){
+			if(x.value == 0 && y.value == 0){
+				alert("Задана точка лежить на початку координат.");
+			} else if(x.value == 0){
+				alert("Задана точка лежить на осі Y.");
+			} else if(y.value == 0){
+				alert("Задана точка лежить на осі X.");
+			} else if(x.value > 0 && y.value > 0){
+				alert("Задана точка лежить у першому діапазоні.");
+			} else if(x.value < 0 && y.value > 0){
+				alert("Задана точка лежить у другому діапазоні.");
+			} else if(x.value < 0 && y.value < 0){
+				alert("Задана точка лежить у третьому діапазоні.");
+			} else if(x.value > 0 && y.value < 0){
+				alert("Задана точка лежить у четвертому діапазоні.");
+			} 
+		}
+	</script>
+
+x=<input type="text" id="x">
+y=<input type="text" id="y">
+<input type="button"  value="Дізнатися" onclick="func()">
+</body>
+</html>

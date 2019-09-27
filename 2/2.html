@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 2</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+
+		function S(){
+
+	var s = (1/2) * (Math.abs(((x1.value-x3.value)*(y2.value-y3.value)) - ((x2.value-x3.value)*(y1.value-y3.value))));
+	result.value = s;
+	}
+
+	</script>
+
+x1=<input type="text" id="x1">
+y1=<input type="text" id="y1"><br>
+
+x2=<input type="text" id="x2">
+y2=<input type="text" id="y2"><br>
+
+x3=<input type="text" id="x3">
+y3=<input type="text" id="y3"><br><br>
+
+S=<input type="text" onfocus="S()" id="result">
+
+</body>
+</html>

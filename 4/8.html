@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 4</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+<body>
+
+<input type="text" id="s">
+<button onclick="func()">Змінити</button>
+<input type="text" id="d">
+
+<script type="text/javascript">
+		function func(){
+			var a = s.value;
+			// a = String(a);
+			var b = а.replace(/\s+/g,' ');
+			alert(b);
+			d.value = b;
+		}
+	</script> 
+</body>
+</html>

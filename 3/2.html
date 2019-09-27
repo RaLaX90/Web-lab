@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 3</title>
+</head>
+<body>
+
+<script type="text/javascript">
+	var chislo = 0, max = 0;
+
+	for(var i = 1;i <= 5;i++){
+		chislo = +prompt("Введіть "+ i + "-е число", "");
+		if(max == undefined){
+			max = chislo;
+		} else if(chislo > max){
+				max = chislo;
+			}
+		}
+	
+	alert("Найбільше число " + max + ".");
+</script>
+</body>
+</html>

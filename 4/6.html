@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 4</title>
+</head>
+<body>
+<script type="text/javascript">
+	function func(){
+		var a = s.value;
+	a = a.replace(/$/gi, " ")
+	.replace(/\s+/g," ");
+	var b = a.match(/[a-z]+\s/gi); 
+	alert(b ? b.length : "Помилка");
+	// alert(b[0]);
+	// arr = a.split(" ").join(",")
+	// .split("  ").join(",")
+	// .split("!").join(",")
+	// .split("@").join(",")
+	// .split("№").join(",")
+	// .split("#").join(",")
+	// .split("$").join(",")
+	// .split("%").join(",")
+	// .split("^").join(",")
+	// .split("&").join(",")
+	// .split("*").join(",")
+	// .split("(").join(",")
+	// .split(")").join(",")
+	// .split("-").join(",")
+	// .split("_").join(",")
+	// .split("=").join(",")
+	// .split("+").join(",")
+	// .split("-").join(",")
+	// .split("`").join(",")
+	// .split("~").join(",")
+	// .split("'").join(",")
+	// .split("\"").join(",")
+	// .split("/").join(",")
+	// .split("[").join(",")
+	// .split("]").join(",")
+	// .split(":").join(",")
+	// .split(",");
+	// for(var i =0; i<arr.length;i++){
+	// 	alert(arr[i]);
+	// }
+	// alert(arr.length);
+	// alert(b+1);
+	}
+</script>
+<input type="text" id="s">
+<button onclick="func()">Порахувати</button>
+</body>
+</html>

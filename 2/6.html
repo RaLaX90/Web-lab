@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Лаба 2</title>
+</head>
+<body>
+	<style type="text/css">
+		#f {
+			display:inline;
+			margin-left: 40%;
+		}
+		#f input {
+			margin-bottom: 10px;
+		}
+	</style>
+
+	<script type="text/javascript">
+		function s() {
+			alert("Ваше ім'я - "+t1.value);
+			alert("Ваше прізвище - "+t2.value);
+			alert("Ваш телефон - "+t3.value);
+			alert("Ваша стать - "+forma.sex.value);
+		}
+	</script>
+
+	<fieldset id="f">
+		<legend>Форма</legend>
+ <form id="forma" onsubmit="s()" method="post">
+ 	Ім'я-<input type="text" name="Name" id="t1" placeholder="Введіть ім'я" required><br>
+ 	Прізвище-<input type="text" name="Surname" id="t2" placeholder="Введіть прізвище" required><br>
+ 	Телефон-<input type="tel" name="telefon" placeholder="Введіть телефон" id="t3" required><br>
+ 	Стать-<input type="radio" value="Чоловіча" name="sex" checked>Чоловіча
+ 	<input type="radio" value="Жіноча" name="sex">Жіноча<br>
+ 	<input type="submit" name="submit" value="Відправити">
+ 	</fieldset>
+ </form>
+</body>
+</html>

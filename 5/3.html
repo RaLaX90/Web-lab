@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Лаба 5 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    function learn_sign() {
+        var date = document.znak_zodiac.your_date.value;
+        var this_month = document.znak_zodiac.your_month.selectedIndex;
+
+        with(document.znak_zodiac.znak) {
+            if (this_month == 1 && date >= 20 || this_month == 2 && date <= 18) value = "Водолій";
+            else if (this_month == 2 && date >= 19 || this_month == 3 && date <= 20) value = "Риби";
+            else if (this_month == 3 && date >= 21 || this_month == 4 && date <= 19) value = "Овен";
+            else if (this_month == 4 && date >= 20 || this_month == 5 && date <= 20) value = "Телець";
+            else if (this_month == 5 && date >= 21 || this_month == 6 && date <= 21) value = "Близнюки";
+            else if (this_month == 6 && date >= 22 || this_month == 7 && date <= 22) value = "Рак";
+            else if (this_month == 7 && date >= 23 || this_month == 8 && date <= 22) value = "Лев";
+            else if (this_month == 8 && date >= 23 || this_month == 9 && date <= 22) value = "Діва";
+            else if (this_month == 9 && date >= 23 || this_month == 10 && date <= 22) value = "Ваги";
+            else if (this_month == 10 && date >= 23 || this_month == 11 && date <= 21) value = "Скорпіон";
+            else if (this_month == 11 && date >= 22 || this_month == 12 && date <= 21) value = "Стрілець";
+            else if (this_month == 12 && date >= 22 || this_month == 1 && date <= 19) value = "Козеріг";
+            else value = "Неправильна дата!";
+
+            if ((date < 1) || (this_month == 2 && date > 29)) value = "Неправильна дата!";
+            if ((this_month == 1 || 3 || 5 || 7 || 8 || 10 || 12) && date > 31) value = "Неправильна дата!";
+            if ((this_month == 4 || 6 || 9 || 11) && date > 30) value = "Неправильна дата!";
+        }
+    }
+    </script>
+</head>
+
+<body>
+			<form name="znak_zodiac">
+    			Месяц <select name="your_month">
+    			<option value="0"></option>
+    			<option value="1">Січень</option>
+    			<option value="2">Лютий</option>
+    			<option value="3">Березень</option>
+    			<option value="4">Квітень</option>
+    			<option value="5">Травень</option>
+    			<option value="6">Червень</option>
+    			<option value="7">Липень</option>
+    			<option value="8">Серпень</option>
+    			<option value="9">Вересень</option>
+    			<option value="10">Жовтень</option>
+    			<option value="11">Листопад</option>
+    			<option value="12">Грудень</option>
+    			</select>
+    			День <input type="text" name="your_date" size="2">
+    			<input type="button" value="Дізнатися" onClick="learn_sign()">
+    			<br><br>
+    			Ваш знак Зодіака - <input type="text" name="znak" size="15">
+			</form>
+</body>
+
+</html>
